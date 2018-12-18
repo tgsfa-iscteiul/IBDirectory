@@ -63,11 +63,10 @@ public class DealWithClient extends Thread {
 				 
 			if (str.startsWith("INSC")) {
 				String info[] = str.split(" ");
-				String nome = info[1];
-				String textAddress = info[2];
+				String textAddress = info[1];
 				InetAddress address = InetAddress.getByName(textAddress);
-				int port = Integer.parseInt(info[3]);
-				newEntry = new User(nome, address, port); // creates user
+				int port = Integer.parseInt(info[2]);
+				newEntry = new User(address, port); // creates user
 				addUser(newEntry);
 				System.out.println("New entry");
 			}
@@ -75,6 +74,7 @@ public class DealWithClient extends Thread {
 			if (str.equals("CLT")) {
 				for (User u : userTable) {
 					out.println(u.toString());
+					System.out.println(u.toString());
 				}
 				out.println("END");
 			}
