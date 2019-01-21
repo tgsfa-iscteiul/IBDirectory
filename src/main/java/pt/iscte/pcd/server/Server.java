@@ -25,7 +25,7 @@ public class Server {
 	 */
 	public void startServing() throws IOException {
 		serverSocket = new ServerSocket(PORTO);
-		System.out.println("Lan�ou ServerSocket: " + serverSocket);
+		System.out.println("Lançou ServerSocket: " + serverSocket);
 		try {			while (true) {
 				Socket socket = serverSocket.accept();
 				System.out.println("Conexao aceite: " + socket);
