@@ -33,6 +33,7 @@ public class DealWithClient extends Thread {
 			e.printStackTrace();
 		} finally {
 			try {
+				userTable.remove(newEntry);
 				socket.close();
 			} catch (IOException e) {
 				e.printStackTrace();
